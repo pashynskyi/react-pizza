@@ -1,7 +1,7 @@
-@import 'variables';
+@import "variables";
 
 .categories {
-  ul {
+  &__list {
     display: flex;
 
     li {
@@ -27,5 +27,15 @@
         color: #fff;
       }
     }
+  }
+  &__button {
+    display: none;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &__cross,
+  &__cross--active {
+    display: none;
   }
 }

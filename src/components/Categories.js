@@ -1,25 +1,63 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import PropTypes from 'prop-types';
+import Button from './Button';
 
 const Categories = memo(function Categories({
   activeCategory,
   items,
   onClickCategory
 }) {
+  const [visibleList, setVisibleList] = useState(false);
+
+  const toggleVisibleList = () => {
+    setVisibleList(!visibleList)
+  }
+
+  const handleClickCategory = (val) => {
+    onClickCategory(val);
+    toggleVisibleList()
+  }
 
   const mapItems = items && items.map((item, index) => (
     <li
       className={activeCategory === index ? 'active' : ''}
-      onClick={() => onClickCategory(index)}
-      key={`${item}_${index}`}>{item}</li>
+      onClick={() => handleClickCategory(index)}
+      key={`${item}_${index}`}
+    >
+      {item}
+    </li>
   ));
 
   return (
     <div className="categories">
-      <ul>
+      <Button
+        className={visibleList
+          ? "categories__button categories__button--active"
+          : "categories__button button--black"
+        }
+        onClick={toggleVisibleList}
+      >
+        Фильтры
+      </Button>
+      <span
+        className={visibleList
+          ? "categories__cross--active"
+          : "categories__cross"
+        }
+        onClick={toggleVisibleList}
+      >
+        &#9932;
+      </span>
+      <ul
+        className={visibleList
+          ? "categories__list categories__list--active"
+          : "categories__list"
+        }
+      >
         <li
           className={activeCategory === null ? 'active' : ''}
-          onClick={() => onClickCategory(null)}>
+          onClick={() => handleClickCategory(null)}
+        >
           Все
         </li>
         {mapItems}

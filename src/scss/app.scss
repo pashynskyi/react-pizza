@@ -28,7 +28,7 @@ body {
   &__items {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   &__top {
@@ -216,6 +216,7 @@ body {
     &-details {
       display: flex;
       justify-content: space-between;
+      align-items: center;
 
       span {
         font-size: 22px;
@@ -294,7 +295,6 @@ body {
     span {
       font-style: normal;
       position: relative;
-      top: 2px;
     }
 
     img {
@@ -312,3 +312,5 @@ body {
     }
   }
 }
+
+@import "media";

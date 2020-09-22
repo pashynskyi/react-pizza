@@ -1,0 +1,273 @@
+@media (max-width: 1300px) {
+  .content__top {
+    flex-wrap: wrap;
+  }
+  .categories {
+    position: relative;
+    &__list {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+
+      background: rgba(#1c1c1c, 0.7);
+      z-index: 5;
+      padding: 90px 24px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      transform: translateY(-1000%);
+      transition: transform 0.3s;
+      overflow: auto;
+      opacity: 0;
+
+      &--active {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      li {
+        width: 400px;
+        text-align: center;
+        margin: 0 auto;
+      }
+    }
+
+    &__button {
+      display: block;
+
+      &.menu__btn--active {
+        background-color: $orange;
+      }
+    }
+
+    &__cross--active {
+      display: block;
+      background-color: transparent;
+      color: #fff;
+      position: fixed;
+      top: 50px;
+      right: 50px;
+      z-index: 10;
+      font-size: 23px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .cart {
+    &__item {
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+
+      &-img {
+        margin-right: 0;
+        width: 100%;
+        img {
+          margin: 0 auto;
+          width: 170px;
+          height: 170px;
+        }
+      }
+
+      &-info {
+        align-items: center;
+        width: 100%;
+        margin-bottom: 15px;
+        h3 {
+          font-size: 18px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+
+      &-count {
+        width: 120px;
+        margin-bottom: 10px;
+      }
+
+      &-remove {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    padding: 25px 0;
+    .container {
+      flex-wrap: wrap;
+    }
+    &__logo {
+      align-items: center;
+      margin-right: 20px;
+      p {
+        display: none;
+      }
+    }
+
+    &__cart {
+      margin: 20px 0;
+    }
+  }
+
+  .cart {
+    &__bottom {
+      margin-bottom: 0;
+
+      &-details {
+        flex-direction: column;
+        span {
+          font-size: 21px;
+          margin-bottom: 10px;
+        }
+      }
+
+      &-buttons {
+        flex-direction: column;
+        margin-top: 30px;
+        & > * {
+          margin: 0 auto;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  .cart--empty {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  body {
+    padding: 30px 0;
+  }
+
+  .wrapper {
+    width: calc(100vw - 40px);
+  }
+
+  .content {
+    padding: 0 0;
+  }
+
+  .header {
+    margin-bottom: 10px;
+    .container {
+      flex-direction: column;
+    }
+    &__cart {
+      margin: 20px 0 0 0;
+    }
+    .button--cart {
+      padding: 8px 20px;
+    }
+  }
+
+  .categories {
+    margin-right: 20px;
+
+    &__list {
+      li {
+        width: 80%;
+      }
+    }
+  }
+
+  .sort {
+    margin: 15px 0px;
+  }
+
+  .cart {
+    &__top {
+      flex-direction: column;
+      margin-top: 25px;
+
+      .content__title {
+        font-size: 28px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .header__logo h1 {
+    font-size: 19px;
+  }
+
+  .content__title {
+    font-size: 22px;
+  }
+
+  .sort {
+    font-size: 14px;
+  }
+
+  .pizza-block {
+    width: 100%;
+    margin: 0 0px 65px;
+
+    &__image {
+      width: 100%;
+    }
+
+    &__bottom {
+      flex-direction: column;
+    }
+
+    &__price {
+      margin-bottom: 10px;
+    }
+  }
+
+  .cart {
+    &__top {
+      .content__title {
+        font-size: 23px;
+      }
+      .cart__clear span {
+        font-size: 17px;
+      }
+    }
+  }
+
+  .cart--empty {
+    img {
+      width: 100%;
+    }
+    h2 {
+      font-size: 22px;
+    }
+    p {
+      font-size: 14px;
+    }
+    .button--black {
+      width: 200px;
+      font-size: 16px;
+      padding: 10px 0 12px;
+    }
+  }
+}
+
+@media (orientation: landscape) {
+  .categories {
+    &__list {
+      li {
+        margin: 5px auto;
+        padding: 10px 30px;
+      }
+    }
+  }
+}

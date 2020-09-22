@@ -14,11 +14,12 @@ import { addPizzaToCart } from '../redux/actions/cartActions';
 
 const categoryNames = [
   'Мясные',
-  'Вегетарианская',
+  'Вегетарианские',
   'Гриль',
   'Острые',
   'Закрытые'
 ];
+
 const sortItems = [
   { name: 'популярности', type: 'popular', order: 'desc', },
   { name: 'цене', type: 'price', order: 'desc' },
@@ -48,7 +49,7 @@ const Home = () => {
   const handleAddPizzaToCart = pizzaObj => {
     dispatch(addPizzaToCart(pizzaObj));
   }
- 
+
   const mapItems = isLoaded
     ? items.map(obj => (
       <PizzaBlock
@@ -76,7 +77,9 @@ const Home = () => {
           onClickSortType={onSelectSortType}
         />
       </div>
-      <h2 className="content__title">Все пиццы</h2>
+      <h2 className="content__title">
+        {category === null ? 'Все' : categoryNames[category]} пиццы
+      </h2>
       <div className="content__items">
         {mapItems}
       </div>
