@@ -10,12 +10,13 @@ const Categories = memo(function Categories({
   const [visibleList, setVisibleList] = useState(false);
 
   const toggleVisibleList = () => {
-    setVisibleList(!visibleList)
+    setVisibleList(!visibleList);
+    document.body.classList.toggle("lock");
   }
 
   const handleClickCategory = (val) => {
     onClickCategory(val);
-    toggleVisibleList()
+    toggleVisibleList();
   }
 
   const mapItems = items && items.map((item, index) => (

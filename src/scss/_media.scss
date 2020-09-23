@@ -1,4 +1,10 @@
 @media (max-width: 1300px) {
+  body {
+    &.lock {
+      overflow: hidden;
+    }
+  }
+
   .content__top {
     flex-wrap: wrap;
   }

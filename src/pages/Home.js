@@ -83,6 +83,7 @@ const Home = () => {
       <div className="content__items">
         {mapItems}
       </div>
+     <a className="container__arrows" href="#top"><span>&#8648;</span></a>
     </div>
   )
 }
